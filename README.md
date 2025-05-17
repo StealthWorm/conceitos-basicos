@@ -52,8 +52,8 @@ For end-to-end (e2e) testing, run:
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Angular Tips
 
-## Additional Resources
+- **Angular.json** : arquivo responsável pela configuração do projeto, como a localização do root do projeto, formatação dos estilos, qual a página inicial index.html, entre outros detalhes
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- para criar components usamos o decorator @Component, que é responsável por criar um novo componente, e o template que importa ambos html e css

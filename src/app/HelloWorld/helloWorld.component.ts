@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
   // template: '<h1>Hello World</h1>'  Podemos passar a tag template e digitar o html que desejamos usar diretamente dentro das plicas
 })
 export class HelloWorldComponent {
-  title = 'Hello World';
-  description = 'Este é um componente de exemplo';
+  title = 'Hello World'; // title é uma propriedade que será usada no html para exibir o título
+  description = 'Este é um componente de exemplo'; // description é uma propriedade que será usada no html para exibir a descrição
 }
 

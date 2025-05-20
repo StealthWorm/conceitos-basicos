@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="form-box">
+    <h1>Calculadora</h1>
+    <!-- ngForm, preciso importar FormsModule pra controlar valores do form -->
+    <form #frm="ngForm">
+      <label for="number1">Digite o primeiro número</label>
+      <input
+        type="number"
+        name="number1"
+        id="number1"
+        placeholder="Digite o primeiro número"
+        [(ngModel)]="number1">
+      <label for="number2">Digite o segundo número</label>
+      <input
+        type="number"
+        name="number2"
+        id="number2"
+        placeholder="Digite o segundo número"
+        [(ngModel)]="number2">
+
+      <div class="operations">
+        <button
+          *ngFor="let op of operations"
+          (click)="defineOperation(op)"
+          [ngClass]="{'selected': selectedOperation === op}">
+          {{ op }}
+        </button>
+      </div>
+
+      <button type="button" (click)="calculate()" class="calculate-button">
+        Calcular
+      </button>
+    </form>
+  </div>
+
+  <div class="result-box">
+    <h1>Resultado: {{ result }}</h1>
+  </div>
+</div>

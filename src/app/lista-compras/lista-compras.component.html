@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Lista de Compras</h1>
+  <form (ngSubmit)="addItem()" class="form-container">
+    <input name="newItem" type="text" placeholder="Adicione um item"
+      [(ngModel)]="newItem">
+    <button type="submit" [disabled]="newItem.trim() === ''">Adicionar</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Item</th>
+        <th>Quantidade</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>
+          <input type="checkbox" [(ngModel)]="item.isChecked">
+        </td>
+        <td>
+          <button (click)="removeItem(item.id)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

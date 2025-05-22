@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Item } from './item-list';
 
 @Component({
   selector: 'app-lista-compras',
@@ -9,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './lista-compras.component.scss'
 })
 export class ListaComprasComponent {
-  items: { id: number, name: string, quantity: number, isChecked: boolean }[] = [];
+  items: Item[] = [];
   newItem: string = '';
 
   addItem() {
@@ -26,5 +27,9 @@ export class ListaComprasComponent {
 
   removeItem(id: number) {
     this.items = this.items.filter(item => item.id !== id);
+  }
+
+  clearItems() {
+    this.items = [];
   }
 }

@@ -7,6 +7,8 @@
   width: 100%;
   padding: 2rem;
   background-color: #f0f0f0;
+  border-radius: 0.25rem;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -41,7 +43,7 @@ input {
   }
 }
 
-button {
+.add-button {
   padding: 0.5rem;
   border: none;
   background-color: #1cc05e;
@@ -61,10 +63,23 @@ button {
   }
 }
 
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+}
+
 table {
+  height: 100%;
   width: 100%;
   border-collapse: collapse;
   border-radius: 0.25rem;
+  box-sizing: border-box;
 }
 
 th,
@@ -83,7 +98,10 @@ td {
 th {
   background-color: #333;
   border: none;
+  position: sticky;
+  top: 0;
   color: #fff;
+  z-index: 1;
 
   &:first-child {
     border-left: none;
@@ -111,14 +129,24 @@ tr {
   }
 
   & button {
+    display: block;
+    width: 100%;
+    padding: 12px;
     background-color: #c01d1d;
     color: #fff;
     border: none;
     border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
       background-color: #a01919;
     }
+  }
+
+  &.checked {
+    opacity: 0.5;
+    text-decoration: line-through;
   }
 }
 
@@ -130,7 +158,24 @@ tr:nth-child(odd) {
   background-color: #fff;
 }
 
-tr:last-child {
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.clear-button {
+  background-color: #c01d1d;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #a01919;
+  }
 }
